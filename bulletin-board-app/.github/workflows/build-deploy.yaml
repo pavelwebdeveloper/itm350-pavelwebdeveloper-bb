@@ -12,11 +12,11 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo The PR was merged
-
       - name: Check out the repo
         uses: actions/checkout@v4
+        
+      - run: |
+          echo The PR was merged
 
       - run: |
           npm install
