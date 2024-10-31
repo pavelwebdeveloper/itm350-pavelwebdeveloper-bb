@@ -19,7 +19,7 @@ jobs:
           echo The PR was merged
 
       - run: |
-          echo "Hello"
+          echo Hello
           npm install
       
       - name: Log in to Docker Hub
