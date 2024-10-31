@@ -19,6 +19,7 @@ jobs:
           echo The PR was merged
 
       - run: |
+          cd ../../../bulletin-board-app
           npm install
       
       - name: Log in to Docker Hub
