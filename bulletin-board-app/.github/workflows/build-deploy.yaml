@@ -15,6 +15,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v3
 
+
       - run: |
           echo The PR was merged
 
