@@ -12,8 +12,8 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hello world Pavlo
-        run: echo Hello world Pavlo
+      - name: Say Hello world Iuliia
+        run: echo Hello world Iuliia
 
       - name: Check out the repo
         uses: actions/checkout@v4
