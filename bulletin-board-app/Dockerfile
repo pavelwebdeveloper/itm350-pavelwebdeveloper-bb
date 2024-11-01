@@ -1,7 +1,7 @@
 FROM node:current-slim
 
-WORKDIR /bulletin-board-app
-COPY package.json .
+WORKDIR /usr/src/app
+COPY package.json ./
 RUN npm install
 
 EXPOSE 8080
