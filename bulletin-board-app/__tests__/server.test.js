@@ -25,7 +25,7 @@ test("Testing the time of loading the app", () => {
 
 /*Process Patterns*/
 
-var app = require('../backend/index');
+var app = require('../backend/index.js');
 
 test("Testing the process for index", () => {
     expect(app.index).toBe(app.index);
