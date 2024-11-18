@@ -1,6 +1,6 @@
 /*Initial general test*/
 
-const events_json = require("../backend/events");
+const events_json = require("../backend/events.js");
 
 test("there are three events", () => {
     expect(events_json.length).toBe(3);
@@ -11,7 +11,7 @@ test("there are three events", () => {
 
 /*Pass/Fail Patterns*/
 
-const events_json = require("../backend/events");
+const events_json = require("../backend/events.js");
 
 test("Here is the title of the event with id 1", () => {
     expect(events_json[0].title).toBe('Docker Workshop');
@@ -30,7 +30,7 @@ test("Here is the title of the event with id 3", () => {
 
 /*Data Driven Test Patterns*/
 
-const events_json = require("../backend/events");
+const events_json = require("../backend/events.js");
 
 //const date_in_msec = Date.parse(events_json[0].date);
 
@@ -50,7 +50,7 @@ test("Here is the date in milliseconds of the event with id 1", () => {
 
 /*Collection Management Patterns*/
 
-const events_json = require("../backend/events");
+const events_json = require("../backend/events.js");
 
 test("The first event has id 1", () => {
     expect(events_json[0].id).toBe(1);
