@@ -11,18 +11,18 @@ test("there are three events", () => {
 
 /*Pass/Fail Patterns*/
 
-const events_json = require("../backend/events.js");
+const events_json2 = require("../backend/events.js");
 
 test("Here is the title of the event with id 1", () => {
-    expect(events_json[0].title).toBe('Docker Workshop');
+    expect(events_json2[0].title).toBe('Docker Workshop');
 });
 
 test("Here is the title of the event with id 2", () => {
-    expect(events_json[1].title).toBe('WinOps #17');
+    expect(events_json2[1].title).toBe('WinOps #17');
 });
 
 test("Here is the title of the event with id 3", () => {
-    expect(events_json[2].title).toBe('Docker London');
+    expect(events_json2[2].title).toBe('Docker London');
 });
 
 
@@ -30,14 +30,14 @@ test("Here is the title of the event with id 3", () => {
 
 /*Data Driven Test Patterns*/
 
-const events_json = require("../backend/events.js");
+const events_json3 = require("../backend/events.js");
 
 //const date_in_msec = Date.parse(events_json[0].date);
 
 //console.log(date_in_msec);
 
 test("Here is the date in milliseconds of the event with id 1", () => {
-    expect(Date.parse(events_json[0].date)).toBe(1511222400000);
+    expect(Date.parse(events_json3[0].date)).toBe(1511222400000);
 });
 
 /*-----------------------------------------------------------------*/
@@ -50,18 +50,18 @@ test("Here is the date in milliseconds of the event with id 1", () => {
 
 /*Collection Management Patterns*/
 
-const events_json = require("../backend/events.js");
+const events_json4 = require("../backend/events.js");
 
 test("The first event has id 1", () => {
-    expect(events_json[0].id).toBe(1);
+    expect(events_json4[0].id).toBe(1);
 });
 
 test("The second event has id 2", () => {
-    expect(events_json[1].id).toBe(2);
+    expect(events_json4[1].id).toBe(2);
 });
 
 test("The third event has id 3", () => {
-    expect(events_json[2].id).toBe(3);
+    expect(events_json4[2].id).toBe(3);
 });
 
 /*-----------------------------------------------------------------*/
@@ -81,7 +81,7 @@ test("The third event has id 3", () => {
 /*Simulation Patterns*/
 
 const app = require("../server");
-
+const api = require("../backend/api.js");
 
 
 test("Posting and event", () => {
@@ -98,14 +98,15 @@ test("Posting and event", () => {
 
 /*Stress-Test Patterns*/
 
-const app = require("../server");
+const app2 = require("../server");
+const api2 = require("../backend/api.js");
 
 for(let i=0; i < 1000000; i++){
-    app.post('/api/events', api.event);
+    app2.post('/api/events', api2.event);
 }
 
 test("Let's see if it orks well after posting 1000000 events", () => {
-    expect(app.get('/api/events', api.events)).toBe(app.get('/api/events', api.events));
+    expect(app2.get('/api/events', api2.events)).toBe(app2.get('/api/events', api2.events));
 });
 
 
