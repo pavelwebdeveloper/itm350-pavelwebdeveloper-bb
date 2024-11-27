@@ -4,10 +4,5 @@ module.exports = {
       './src/*.js': {
         lines: 80
       }
-    },
-    scriptPreprocessor: "./preprocessor.js",
-    testPathIgnorePatterns: [
-      "/node_modules/",
-      "/jspm_packages"
-    ]
+    }
   }
