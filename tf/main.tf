@@ -556,17 +556,23 @@ resource "aws_launch_template" "ecs_lt" {
 }
 
 resource "aws_autoscaling_group" "ecs_asg" {
- vpc_zone_identifier = [aws_subnet.subnet-priv1.id, aws_subnet.subnet-priv2.id]
+  vpc_zone_identifier = [aws_subnet.subnet-priv1.id, aws_subnet.subnet-priv2.id]
 #TODO:
-#availability_zones = ["us-west-2a", "us-west-2b"]
-  desired_capacity   = 1
-  max_size           = 1
-  min_size           = 1
+  #availability_zones = ["us-west-2a", "us-west-2b"]
+  desired_capacity   = 4
+  max_size           = 5
+  min_size           = 2
 
  launch_template {
   id      = aws_launch_template.ecs_lt.id
   version = "$Latest"
  }
+
+ tag {
+    key                 = "AmazonECSManaged"
+    value               = true
+    propagate_at_launch = true
+  }
 }
 
 resource "aws_lb" "ecs_alb" {
@@ -621,7 +627,7 @@ name = "test1"
      maximum_scaling_step_size = 1000
      minimum_scaling_step_size = 1
      status                    = "ENABLED"
-     target_capacity           = 3
+     target_capacity           = 10
    }
  }
 }
