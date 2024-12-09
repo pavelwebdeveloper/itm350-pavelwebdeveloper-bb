@@ -1,9 +1,10 @@
 /*Data Transaction Patterns*/
 
-var events = require('../backend/api');
+//var events = require('../backend/api');
+var events = require('../backend/events.js');
 
 console.log("Here are all the events");
-console.log(events.events());
+console.log(events);
 
 test("Trying to see all the events", () => {
     expect(events.events()).toBe(JSON.stringify([

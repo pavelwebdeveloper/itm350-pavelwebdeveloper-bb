@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1728110221401" clover="3.2.0">
-  <project timestamp="1728110221402" name="All files">
+<coverage generated="1731990850033" clover="3.2.0">
+  <project timestamp="1731990850034" name="All files">
     <metrics statements="35" coveredstatements="30" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="0" elements="42" coveredelements="32" complexity="0" loc="35" ncloc="35" packages="2" files="4" classes="4"/>
     <package name="bulletin-board-app">
       <metrics statements="27" coveredstatements="25" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
@@ -51,7 +51,7 @@
       </file>
       <file name="index.js" path="C:\Users\Pavel\Documents\GitHub\itm350-pavelwebdeveloper-bb\bulletin-board-app\backend\index.js">
         <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
       </file>
     </package>
