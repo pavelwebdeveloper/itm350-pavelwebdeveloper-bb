@@ -420,9 +420,15 @@ resource "aws_eip" "nat_gateway" {
 }
 
 resource "aws_nat_gateway" "nat_gw" {
-  #TODO:??
-  connectivity_type = "private"
-  subnet_id = aws_subnet.subnet-priv1.id
+  # TODO:??
+  # connectivity_type = "private"
+  # subnet_id = aws_subnet.subnet-priv1.id
+  # tags = {
+  #   Name = "NAT_gw"
+  # }
+
+  allocation_id = aws_eip.nat_gateway.id
+  subnet_id     = aws_subnet.subnet_pub1.id
   tags = {
     Name = "NAT_gw"
   }
@@ -439,7 +445,12 @@ resource "aws_route_table" "route_table" {
    cidr_block = "0.0.0.0/0"
    gateway_id = aws_internet_gateway.internet_gateway.id
  }
+
+ tags = {
+    Name = "public-route-table"
+  }
 }
+
 resource "aws_route_table" "private_route_table" {
  #TODO:??
  vpc_id = aws_vpc.ecs-vpc.id
@@ -447,6 +458,10 @@ resource "aws_route_table" "private_route_table" {
    cidr_block = "0.0.0.0/0"
    gateway_id = aws_nat_gateway.nat_gw.id
  }
+
+ tags = {
+    Name = "private-route-table"
+  }
 }
 
 resource "aws_route_table_association" "subnet_route" {
@@ -463,24 +478,30 @@ resource "aws_route_table_association" "subnet2_route" {
 resource "aws_route_table_association" "priv_subnet1_route" {
  #TODO:
  subnet_id      = aws_subnet.subnet-priv1.id
- route_table_id = aws_route_table.route_table.id
+ # route_table_id = aws_route_table.route_table.id
+ route_table_id = aws_route_table.private_route_table.id
 }
 
 resource "aws_route_table_association" "priv_subnet2_route" {
  #TODO:
  subnet_id      = aws_subnet.subnet-priv2.id
- route_table_id = aws_route_table.route_table.id
+ # route_table_id = aws_route_table.route_table.id
+ route_table_id = aws_route_table.private_route_table.id
 }
 
 resource "aws_security_group" "alb-http-sg" {
  #TODO:
- name   = "ecs-http"
+ 
  vpc_id = aws_vpc.ecs-vpc.id
  ingress {
-   from_port   = 0
-   to_port     = 0
-   protocol    = -1
-   self        = "false"
+   # from_port   = 0
+   # to_port     = 0
+   # protocol    = -1
+   # self        = "false"
+   from_port   = 80
+   to_port     = 80
+   # protocol    = "tcp"
+   protocol    = "http"
    cidr_blocks = ["0.0.0.0/0"]
    description = "HTTP for ECS"
  }
@@ -499,7 +520,6 @@ resource "aws_security_group" "alb-http-sg" {
 
 resource "aws_security_group" "ecs-cluster-sg" {
  #TODO:
- name   = "ecs-sg"
  vpc_id = aws_vpc.ecs-vpc.id
   ingress {
       from_port   = 32153
@@ -527,7 +547,7 @@ resource "aws_security_group" "ecs-cluster-sg" {
 
 resource "aws_key_pair" "ecs-node-kp" {
   key_name   = "ecs-node-key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCe3VJx8UfFlgzv/2HrwU2nRvgTPhFMJQxFRzXAYPuPwnF54rf/v+5m3b+a+RMYKpIVgIcCTi1P1Eo3RCrHex99dutmmnF1U71ntoKUMkm6H5cElmqeq2sNjbLg5FcM2/jMwFCbinz52ymY/yHIbxCu+65WO30LeFtR6XbMWzHTFTZ+NUY2lCd1XSvHE8YUhVcDjAO4MUAAVBKQync76DALy9i6yJ2PU+6vi2u0J/cth8/PGimN6HqCKFIwyS39Pjm//kf5DTZPXTbCa5qdU6zmLGA0/TClneMaiJr2hK1tgeFN+yArFRaBk6v24VBGbzCpmKvt3FydZH/IrLD62svM+QRDhH0qSTG30XOW93fzhvilnJFu09vwvzm5pq2rD5kd+pGMTTI7kNHKTpuul0un+3rVjx8mubT9ly879JTm5lyVT8wJPFh5GT1pG49ZV5jas2/j4U0nGucUJEkdBgWHsJRNawI8WBEstt7hpzH3jW2ogNHEudyESuo/MZwHPeE= cloudshell-user@ip-10-134-63-106.ec2.internal"
+  public_key = file("~/.ssh/id_rsa.pub")
 }
 
 resource "aws_launch_template" "ecs_lt" {
@@ -557,8 +577,7 @@ resource "aws_launch_template" "ecs_lt" {
 
 resource "aws_autoscaling_group" "ecs_asg" {
   vpc_zone_identifier = [aws_subnet.subnet-priv1.id, aws_subnet.subnet-priv2.id]
-#TODO:
-  #availability_zones = ["us-west-2a", "us-west-2b"]
+  # TODO:
   desired_capacity   = 4
   max_size           = 5
   min_size           = 2
@@ -581,7 +600,8 @@ name               = "ecs-alb"
  internal           = false
  load_balancer_type = "application"
  security_groups    = [aws_security_group.alb-http-sg.id, aws_security_group.ecs-cluster-sg.id]
- subnets            = [aws_subnet.subnet-priv1.id, aws_subnet.subnet-priv2.id]
+ # subnets            = [aws_subnet.subnet-priv1.id, aws_subnet.subnet-priv2.id]
+ subnets            = [aws_subnet.subnet-pub1.id, aws_subnet.subnet-pub2.id]
 
  tags = {
    Name = "ecs-alb"
@@ -618,7 +638,7 @@ resource "aws_ecs_cluster" "ecs_cluster" {
 
 resource "aws_ecs_capacity_provider" "ecs_capacity_provider" {
 #TODO:
-name = "test1"
+name = "capacity-provider"
 
  auto_scaling_group_provider {
    auto_scaling_group_arn = aws_autoscaling_group.ecs_asg.arn
