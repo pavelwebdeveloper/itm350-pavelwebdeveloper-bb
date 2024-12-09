@@ -7,8 +7,8 @@ console.log("Here are all the events");
 console.log(events);
 
 test("Trying to see all the events", () => {
-    expect(events).toStrictEqual([
-      {
+    expect(events.events()).toBe(JSON.stringify([
+        {
           id: 1,
           title: 'Docker Workshop',
           detail: 'Linuxing in London ',
@@ -25,7 +25,7 @@ test("Trying to see all the events", () => {
           title: 'Docker London',
           date: '2017-11-13'
         }
-      ]);
+      ]));
 });
 
 /*-----------------------------------------------------------------*/
