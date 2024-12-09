@@ -6,7 +6,7 @@ console.log("Here are all the events");
 console.log(events.events());
 
 test("Trying to see all the events", () => {
-    expect(events.events()).toBe(JSON.stringify([
+    expect(console.log(events.events())).toBe(JSON.stringify([
         {
           id: 1,
           title: 'Docker Workshop',
