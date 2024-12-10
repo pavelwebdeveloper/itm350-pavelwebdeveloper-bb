@@ -23,6 +23,6 @@
   "scripts": {
     "start": "node server.js",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage --maxWorkers 2"
   }
 }

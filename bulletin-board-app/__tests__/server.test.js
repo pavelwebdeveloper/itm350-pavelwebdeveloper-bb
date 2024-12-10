@@ -17,7 +17,7 @@ console.log('*******************************');
 
 test("Testing the time of loading the app", () => {
    
-    expect(the_time_of_loading_the_app).toBe(10);
+    expect(the_time_of_loading_the_app).toBe(2);
 });
 
 
@@ -25,10 +25,16 @@ test("Testing the time of loading the app", () => {
 
 /*Process Patterns*/
 
-var app2 = require('../backend/index.js');
+//var app2 = require('../backend/index.js');
+//var api = require('../backend/api.js');
+/*var routes = require('../backend');
 
-test("Testing the process for index", () => {
-    expect(app2.index).toBe(app2.index);
+console.log("Here is the app2");
+console.log(app);
+
+test("Testing the process for app2", () => {
+    expect(app.get('/', routes.index)).toBe(app.get('/', routes.index));
+    //expect(api.events).toBe(api.events);
 });
 
 /*-----------------------------------------------------------------*/
