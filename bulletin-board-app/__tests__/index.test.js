@@ -2,13 +2,15 @@
 
 
 const app = require("../server");
-const index = require('../backend');
+//const index = require('../backend');
+const routes = require('../backend');
 //const app = require("../app");
 
-//console.log(app.get('/', routes.index));
+console.log("Here is routes.index");
+console.log(app.get('/', routes.index));
 
 test("Trying to get index page", () => {
-    expect(app.get('/', index)).toBe(app.get('/', index));
+    expect(app.get('/', routes.index)).toBe(app.get('/', routes.index));
 });
 
 /*-----------------------------------------------------------------*/
