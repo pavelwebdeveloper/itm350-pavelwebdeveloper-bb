@@ -1,7 +1,10 @@
 /*Presentation Layer Patterns*/
 
 
-const app = require("../server.js");
+//const app = require("../server.js");
+
+const app = {};
+
 const routes = require('../backend/index.js');
 
 console.log("Here is routes.index");
@@ -41,3 +44,5 @@ for(let i=0; i < 10000; i++){
 test("Let's see if it orks well after posting 10000 events", () => {
     expect(app.get('/api/events', api.events)).toBe(app.get('/api/events', api.events));
 });
+
+
