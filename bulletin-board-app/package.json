@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "jest",
+    "test": "jest 's/const FORCE_EXIT_DELAY = 500;/const FORCE_EXIT_DELAY = 7000;/g' --watchAll --detectOpenHandles",
     "test:coverage": "jest --coverage"
   }
 }
