@@ -1,14 +1,13 @@
 /*Data Transaction Patterns*/
 
-//var events = require('../backend/api');
 var events = require('../backend/events.js');
 
 console.log("Here are all the events");
 console.log(events);
 
 test("Trying to see all the events", () => {
-    expect(events).toStrictEqual([
-      {
+    expect(JSON.stringify(events)).toBe(JSON.stringify([
+        {
           id: 1,
           title: 'Docker Workshop',
           detail: 'Linuxing in London ',
@@ -25,7 +24,7 @@ test("Trying to see all the events", () => {
           title: 'Docker London',
           date: '2017-11-13'
         }
-      ]);
+      ]));
 });
 
 /*-----------------------------------------------------------------*/
