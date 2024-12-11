@@ -1,0 +1,10 @@
+ami                         = "ami-0e252be8f4dfa2c0d"
+cluster_name		        = "bb-cluster"
+container_image             = "pavlowebdeveloper/itm350-pavlowebdeveloper-bb:sha-d869947"
+container_port              = 8080
+instance_name_prefix	    = "cit262-node"
+instance_type               = "t2.micro"
+lab_role                    = "arn:aws:iam::919233576652:role/LabRole"
+region                      = "us-west-2"
+vpc_cidr		            = "10.0.0.0/16"
+vpc_prefix		            = "ecs-vpc"
