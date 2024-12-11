@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<coverage generated="1733902126492" clover="3.2.0">
+  <project timestamp="1733902126493" name="All files">
+=======
 <coverage generated="1733887556936" clover="3.2.0">
   <project timestamp="1733887556937" name="All files">
+>>>>>>> 87ab2638d50c7b3977393013ab7d418cfa79027b
     <metrics statements="35" coveredstatements="30" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="0" elements="42" coveredelements="32" complexity="0" loc="35" ncloc="35" packages="2" files="4" classes="4"/>
     <package name="bulletin-board-app">
       <metrics statements="27" coveredstatements="25" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
