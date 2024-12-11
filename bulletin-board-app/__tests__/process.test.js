@@ -1,6 +1,5 @@
 /*Process Patterns*/
 
-//const app = require("../server");
 var app2 = require('../backend/index.js');
 //var api = require('../backend/api.js');
 //var routes = require('../backend');
