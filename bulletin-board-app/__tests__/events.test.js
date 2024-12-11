@@ -55,11 +55,6 @@ test("there are three events", () => {
 /*-----------------------------------------------------------------*/
 
 
-/*Presentation Layer Patterns*/
-
-// in presentation-simulaion-stress.test.js
-
-/*-----------------------------------------------------------------*/
 
 
 
