@@ -1,7 +1,7 @@
 /*Presentation Layer Patterns*/
 
 
-const app = require("../server.js");
+const app = require("../testServer.js");
 const routes = require('../backend/index.js');
 
 console.log("Here is routes.index");
