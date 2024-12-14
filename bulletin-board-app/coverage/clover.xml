@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1734025764159" clover="3.2.0">
-  <project timestamp="1734025764160" name="All files">
-    <metrics statements="70" coveredstatements="40" conditionals="14" coveredconditionals="2" methods="11" coveredmethods="0" elements="95" coveredelements="42" complexity="0" loc="70" ncloc="70" packages="2" files="5" classes="5"/>
+<coverage generated="1734150791329" clover="3.2.0">
+  <project timestamp="1734150791329" name="All files">
+    <metrics statements="74" coveredstatements="41" conditionals="14" coveredconditionals="2" methods="11" coveredmethods="0" elements="99" coveredelements="43" complexity="0" loc="74" ncloc="74" packages="2" files="5" classes="5"/>
     <package name="bulletin-board-app">
-      <metrics statements="25" coveredstatements="23" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
+      <metrics statements="26" coveredstatements="24" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
       <file name="testServer.js" path="C:\Users\Pavel\Documents\GitHub\itm350-pavelwebdeveloper-bb\bulletin-board-app\testServer.js">
-        <metrics statements="25" coveredstatements="23" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
+        <metrics statements="26" coveredstatements="24" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
@@ -22,25 +21,23 @@
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="28" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="29" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="0" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
       </file>
     </package>
     <package name="bulletin-board-app.backend">
-      <metrics statements="45" coveredstatements="17" conditionals="10" coveredconditionals="0" methods="11" coveredmethods="0"/>
+      <metrics statements="48" coveredstatements="17" conditionals="10" coveredconditionals="0" methods="11" coveredmethods="0"/>
       <file name="api.js" path="C:\Users\Pavel\Documents\GitHub\itm350-pavelwebdeveloper-bb\bulletin-board-app\backend\api.js">
-        <metrics statements="32" coveredstatements="5" conditionals="10" coveredconditionals="0" methods="10" coveredmethods="0"/>
+        <metrics statements="35" coveredstatements="5" conditionals="10" coveredconditionals="0" methods="10" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -50,29 +47,32 @@
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="38" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="48" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="49" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="50" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="51" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
       </file>
       <file name="aws.js" path="C:\Users\Pavel\Documents\GitHub\itm350-pavelwebdeveloper-bb\bulletin-board-app\backend\aws.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
