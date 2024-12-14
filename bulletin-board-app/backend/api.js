@@ -10,6 +10,7 @@ exports.events = function (req, res) {
     docClient.send(getCommand).then(
         (data) => {
             res.send(data.Item);
+            console.log("Here are " + data);
         },
         (error) => {
             console.log(error);
@@ -39,6 +40,7 @@ exports.event = function (req, res) {
         docClient.send(deleteCommand).then(
             (data) => {
                 res.send(data);
+                console.log("Successfully deleted " + data);
             },
             (error) => {
                 console.log("delete error " + error);
@@ -57,6 +59,7 @@ exports.event = function (req, res) {
         docClient.send(putCommand).then(
             (data) => {
                 res.send(data);
+                console.log("Successfully added " + data);
             },
             (error) => {
                 console.log("put error " + error);
