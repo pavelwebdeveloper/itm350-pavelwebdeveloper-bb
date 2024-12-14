@@ -16,7 +16,8 @@
     "mock": "^0.1.1",
     "morgan": "^1.6.1",
     "vue": "^1.0.10",
-    "vue-resource": "^0.1.17"
+    "vue-resource": "^0.1.17",
+    "worker": "^0.4.0"
   },
   "devDependencies": {
     "body-parser": "^1.14.1",
@@ -27,7 +28,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "jest",
+    "test": "jest 's/const FORCE_EXIT_DELAY = 500;/const FORCE_EXIT_DELAY = 7000;/g' --watchAll --detectOpenHandles",
     "test:coverage": "jest --coverage"
   }
 }

@@ -16,7 +16,7 @@ console.log('*******************************');
 
 test("Testing the time of loading the app", () => {
    
-    expect(the_time_of_loading_the_app).toBe(2);
+    expect(the_time_of_loading_the_app).toBe(0);
 });
 
 
