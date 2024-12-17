@@ -1,6 +1,6 @@
 ami                         = "ami-0e252be8f4dfa2c0d"
 cluster_name		        = "bb-cluster"
-container_image             = "pavlowebdeveloper/itm350-pavlowebdeveloper-bb:sha-d869947"
+container_image             = "pavlowebdeveloper/itm350-pavlowebdeveloper-bb:sha-599683a"
 container_port              = 8080
 instance_name_prefix	    = "cit262-node"
 instance_type               = "t2.micro"
