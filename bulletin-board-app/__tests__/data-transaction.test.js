@@ -1,6 +1,5 @@
 /*Data Transaction Patterns*/
 
-//var events = require('../backend/api');
 var events = require('../backend/events.js');
 
 console.log("Here are all the events");
