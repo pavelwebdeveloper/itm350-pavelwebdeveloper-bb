@@ -17,5 +17,33 @@ test("Trying to get index page", () => {
 
 /*-----------------------------------------------------------------*/
 
+<<<<<<< HEAD
+=======
+/*Simulation Patterns*/
+
+//const app = require("../server");
+const api = require("../backend/api.js");
+
+console.log("Here is api");
+console.log(api);
+
+test("Posting and event", () => {
+    expect(app.post('/api/events', api.event)).toBe(app.post('/api/events', api.event));
+    
+});
+
+/*Stress-Test Patterns*/
+
+//const app = require("../server");
+//const api = require("../backend/api");
+
+for(let i=0; i < 10000; i++){
+    app.post('/api/events', api.event);
+}
+
+test("Let's see if it orks well after posting 10000 events", () => {
+    expect(app.get('/api/events', api.events)).toBe(app.get('/api/events', api.events));
+});
+>>>>>>> 599683a143de67825e103dbdfda7517caa9b4a82
 
 
